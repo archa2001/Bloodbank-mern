@@ -1,0 +1,120 @@
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+.admin-heading {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.admin-users-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-user-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.admin-user-card:hover {
+  transform: translateY(-5px);
+}
+
+.admin-user-details p {
+  margin: 0.5rem 0;
+}
+
+.admin-blood-counts {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-blood-counts ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.admin-blood-counts li {
+  background-color: #ecf0f1;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.admin-requests {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.admin-requests ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-requests li {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.admin-requests h2, .admin-requests h3 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.admin-button1 {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.admin-button1:hover {
+  background-color: #2980b9;
+}
+
+.admin-button1:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.admin-button1:last-child {
+  background-color: #e74c3c;
+}
+
+.admin-button1:last-child:hover {
+  background-color: #c0392b;
+}
+

@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const adminSchema = new mongoose.Schema({
-    email:{
+    adminemail:{
         type:'String',
         required:'true',
     },
-    password:{
+    adminpas:{
         type:'String',
         required:'true',
     }

@@ -37,6 +37,7 @@ background-color: red;
 
 .dropdown-menu {
     background-color: #f8f9fa; /* Light grey background for dropdown */
+width: 50%;
 }
 
 .dropdown-item {

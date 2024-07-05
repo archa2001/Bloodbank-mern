@@ -34,15 +34,15 @@ const getAllUsers = async (req, res) => {
     }
 };
 
+
 const getTotalBloodCount = async (req, res) => {
     try {
-        const bloodGroups = ['O+', 'O-', 'AB+', 'AB-', 'A+', 'A-', 'B+', 'B-'];
+        const bloodInventories = await BloodInventory.find({});
         const bloodCount = {};
 
-        for (const group of bloodGroups) {
-            const count = await Donate.countDocuments({ bloodGroup: group });
-            bloodCount[group] = count;
-        }
+        bloodInventories.forEach(inventory => {
+            bloodCount[inventory.bloodGroup] = inventory.count;
+        });
 
         res.status(200).json(bloodCount);
     } catch (error) {
@@ -50,6 +50,10 @@ const getTotalBloodCount = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+
+
+
+// Accept Blood Request
 const acceptBloodRequest = async (req, res) => {
     try {
         const { requestId } = req.params;
@@ -60,11 +64,7 @@ const acceptBloodRequest = async (req, res) => {
         }
 
         let bloodInventory = await BloodInventory.findOne({ bloodGroup: request.requiredbloodgroup });
-        if (!bloodInventory) {
-            return res.status(400).json({ message: 'Insufficient blood inventory' });
-        }
-
-        if (bloodInventory.count <= 0) {
+        if (!bloodInventory || bloodInventory.count <= 0) {
             return res.status(400).json({ message: 'Insufficient blood inventory' });
         }
 
@@ -80,6 +80,9 @@ const acceptBloodRequest = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+
+
+
 const getAllBloodRequests = async (req, res) => {
     try {
         const requests = await Request.find({});
@@ -89,6 +92,8 @@ const getAllBloodRequests = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+
+
 
 // Delete a blood request
 const deleteBloodRequest = async (req, res) => {

@@ -146,48 +146,37 @@ const userdon = async (req, res) => {
     }
 };
 
-module.exports = userdon;
-
-const userreq = async (req, res) => {
+const userRequest = async (req, res) => {
     try {
-        const { name, bloodGroup, requiredbloodgroup, Age, reason } = req.body;
-        if (!name || !bloodGroup || !requiredbloodgroup || !Age || !reason) {
+        const { email, requiredbloodgroup, Age, reason } = req.body;
+
+        if (!email || !requiredbloodgroup || !Age || !reason) {
             return res.status(400).json({ message: 'Please fill in all fields' });
         }
 
-        const bloodCompatibility = {
-            'A+': ['A+', 'A-', 'O+', 'O-'],
-            'A-': ['A-', 'O-'],
-            'B+': ['B+', 'B-', 'O+', 'O-'],
-            'B-': ['B-', 'O-'],
-            'AB+': ['A+', 'B+', 'O+', 'AB+', 'A-', 'B-', 'O-', 'AB-'],
-            'AB-': ['A-', 'B-', 'O-', 'AB-'],
-            'O+': ['O+', 'O-'],
-            'O-': ['O-']
-        };
-
-        if (!bloodCompatibility[requiredbloodgroup].includes(bloodGroup)) {
-            return res.status(400).json({ message: 'Incompatible blood type' });
+        let user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
         }
 
-        const newRequest = new Request ({
-            name,
-            bloodGroup,
+        // if (user.bloodGroup === requiredbloodgroup) {
+        //     return res.status(400).json({ message: 'You cannot request blood for the same blood group as yours' });
+        // }
+
+        const newRequest = new Request({
+            name: user.name,
+            bloodGroup: user.bloodGroup,
             requiredbloodgroup,
             Age,
-            reason,
-            status: 'Pending'
+            reason
         });
 
         await newRequest.save();
-        
-        
-     
 
-        res.status(200).json({ message: 'Blood request successfully created' });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Error in Requesting' });
+        res.status(201).json({ message: 'Blood request submitted successfully' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Error in submitting request' });
     }
 };
 
@@ -197,5 +186,6 @@ module.exports = {
     registerUser,
     userLogin,
     userdon,
-    userreq,
+    userRequest
+    // userreq,
 };

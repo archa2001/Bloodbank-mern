@@ -11,6 +11,7 @@ import Login from './Components/Login';
 import Request from './Components/Request';
 import Adminlogin from './Components/Adminlogin';
 import Admin from './Components/Admin';
+import About from './Components/About';
 
 function App() {
   const[email,setMail]=useState("");
@@ -18,7 +19,8 @@ function App() {
   const[password,setPassword]=useState("");
   const[confirm,setConfirm]=useState("");
   const[bloodGroup,setBlood]=useState("");
-  const values={email,setMail,name,setName,password,setPassword,confirm,setConfirm,bloodGroup,setBlood}
+  const [logUser,setLogUser]=useState([])
+  const values={email,setMail,name,setName,password,setPassword,confirm,setConfirm,bloodGroup,setBlood,logUser,setLogUser}
   return (
     <div className="App">
   
@@ -30,8 +32,9 @@ function App() {
   <Route path='/Donate' element={<Donation/>}/>
   <Route path='/Login' element={<Login/>}/>
   <Route path='/Request' element={<Request/>}/>
-  <Route path='/admlog' element={<Adminlogin/>}/>
-  <Route path='/admin' element={<Admin/>}/>
+  <Route path='/admin' element={<Adminlogin/>}/>
+  <Route path='/adminc' element={<Admin/>}/>
+  <Route path='/about' element={<About />}/>
 
 </Routes>
 </mycontx.Provider>

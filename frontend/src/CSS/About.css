@@ -1,0 +1,133 @@
+/* About.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  /* Container styles */
+  .about-page {
+    /* 
+    
+    max-width: 800px; */
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styles */
+  .about-page header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-page header h1 {
+    color: #333333;
+  }
+  
+  .about-page header p {
+    color: #666666;
+  }
+  
+  /* Section styles */
+  .about-page section {
+    margin-bottom: 30px;
+  }
+  
+  .about-page section h2 {
+    color: #333333;
+    border-bottom: 2px solid #cccccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .about-page section p {
+    color: #666666;
+    line-height: 1.6;
+  }
+  
+  .about-page section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .about-page section li {
+    margin-bottom: 10px;
+  }
+  
+  .about-page section li strong {
+    color: #333333;
+  }
+  
+  /* Testimonials styles */
+  .about-page blockquote {
+    background-color: #f9f9f9;
+    border-left: 5px solid #4caf50;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .about-page blockquote p {
+    font-style: italic;
+    color: #555555;
+  }
+  
+  .about-page blockquote footer {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #777777;
+  }
+  
+  /* Call to action styles */
+  .about-page .call-to-action {
+    text-align: center;
+  }
+  
+  .about-page .call-to-action a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .about-page .call-to-action a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Contact section styles */
+  .about-page .contact ul {
+    padding-left: 0;
+  }
+  
+  .about-page .contact ul li {
+    margin-bottom: 5px;
+  }
+  
+  .about-page .contact a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  
+  .about-page .contact a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 600px) {
+    .about-page {
+      padding: 10px;
+    }
+    
+    .about-page section h2 {
+      font-size: 24px;
+    }
+    
+    .about-page blockquote {
+      font-size: 14px;
+    }
+  }
+  

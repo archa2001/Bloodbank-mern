@@ -1,5 +1,4 @@
 
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -20,8 +19,8 @@ app.use(bodyParser.json());
 
 app.use(cors({
     origin: 'http://localhost:3000',
-    // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 const userRoute = require('./Routes/userroutes');
@@ -30,4 +29,3 @@ app.use("/user", userRoute);
 app.use("/admin",adminRoute);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
-
