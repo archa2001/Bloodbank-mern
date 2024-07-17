@@ -1,5 +1,6 @@
 import React from 'react';
 import '../CSS/Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,6 +10,7 @@ const Footer = () => {
           <h4>Contact Us</h4>
           <p>Email: contact@ebloodbank.com</p>
           <p>Phone: +123-456-7890</p>
+          <p><Link to='/admin' style={{color:'white'}}>Admin</Link></p>
         </div>
         <div className="footer-section">
           <h4>About Us</h4>

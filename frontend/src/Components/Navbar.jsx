@@ -23,7 +23,7 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
        
-        <form className="d-flex">
+        <form className="d-flex" style={{ marginRight:"2%"}}>
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -32,7 +32,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link to={'/about'} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <a className="nav-link" href="#" style={{color:"black"}} ><b>About us </b></a>
+              <a className="nav-link" href="#" style={{color:"black"}}><b>About us </b></a>
             </Link>
 
             </li>

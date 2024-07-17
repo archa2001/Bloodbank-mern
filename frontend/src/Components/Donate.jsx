@@ -156,6 +156,7 @@ export default function Donation() {
             <h3>Step 1: Personal Information</h3>
             <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
             <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+            <label>DOB</label>
             <input type="date" name="dateofbirth" placeholder="Date of Birth" value={formData.dateofbirth} onChange={handleChange} required />
             <button onClick={nextStep}>Next</button>
           </div>
@@ -187,6 +188,7 @@ export default function Donation() {
             <h3>Step 3: Donation Details</h3>
             <input type="number" name="quantity" placeholder="Quantity (in ml)" value={formData.quantity} onChange={handleChange} required />
             <input type="text" name="diseases" placeholder="Any diseases?" value={formData.diseases} onChange={handleChange} />
+            <label>Date of Donation</label>
             <input type="date" name="dateofdonation" placeholder="Date of Donation" value={formData.dateofdonation} onChange={handleChange} required />
             <button onClick={prevStep}>Back</button>
             <button onClick={handleSubmit}>Submit Donation</button>
